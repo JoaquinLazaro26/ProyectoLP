@@ -110,6 +110,9 @@ public class FrmLogin extends JDialog implements ActionListener {
 			
 			if(usuarioValidar!= null) {
 				JOptionPane.showMessageDialog(this, "Bienvenido " + oUsuario.getUsuario());
+				frmPrincipal x = new frmPrincipal();
+				x.setVisible(true);
+				this.dispose();
 			}
 			else {
 				lblError.setVisible(true);
