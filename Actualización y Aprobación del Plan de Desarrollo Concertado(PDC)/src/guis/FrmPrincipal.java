@@ -27,6 +27,7 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 	private JMenu mnNewMenu_5;
 	private JMenuItem mntmNewMenuItem_2;
 	private JMenuItem mntmNewMenuItem_3;
+	private JMenuItem mntmNewMenuItem_4;
 
 	/**
 	 * Launch the application.
@@ -76,7 +77,7 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 		mnNewMenu_4 = new JMenu("Victoria");
 		menuBar.add(mnNewMenu_4);
 		
-		mnNewMenu_5 = new JMenu("Alexandra");
+		mnNewMenu_5 = new JMenu("Matenimiento documentos");
 		menuBar.add(mnNewMenu_5);
 		
 		mntmNewMenuItem_2 = new JMenuItem("Listar gestores");
@@ -86,6 +87,9 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 		mntmNewMenuItem_3 = new JMenuItem("Documentos gestores");
 		mntmNewMenuItem_3.addActionListener(this);
 		mnNewMenu_5.add(mntmNewMenuItem_3);
+		
+		mntmNewMenuItem_4 = new JMenuItem("Buscar nombre");
+		mnNewMenu_5.add(mntmNewMenuItem_4);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
