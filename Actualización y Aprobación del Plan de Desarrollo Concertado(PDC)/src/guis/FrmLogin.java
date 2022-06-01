@@ -27,6 +27,9 @@ public class FrmLogin extends JDialog implements ActionListener {
 	private JPasswordField psfContraseña;
 	private JButton btnIngresar;
 	private JLabel lblError;
+	private JLabel lblNewLabel_2;
+	private JLabel lblNewLabel_3;
+	private JLabel lblNewLabel_4;
 
 	/**
 	 * Launch the application.
@@ -46,7 +49,7 @@ public class FrmLogin extends JDialog implements ActionListener {
 	 */
 	public FrmLogin() {
 		setTitle("Login");
-		setBounds(100, 100, 358, 325);
+		setBounds(100, 100, 720, 477);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -54,34 +57,46 @@ public class FrmLogin extends JDialog implements ActionListener {
 		
 		JLabel lblNewLabel = new JLabel("Usuario");
 		lblNewLabel.setFont(new Font("Verdana", Font.PLAIN, 12));
-		lblNewLabel.setBounds(53, 51, 83, 14);
+		lblNewLabel.setBounds(409, 103, 83, 14);
 		contentPanel.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Contrase\u00F1a");
 		lblNewLabel_1.setFont(new Font("Verdana", Font.PLAIN, 12));
-		lblNewLabel_1.setBounds(53, 125, 83, 14);
+		lblNewLabel_1.setBounds(409, 177, 83, 14);
 		contentPanel.add(lblNewLabel_1);
 		
 		txtUsuario = new JTextField();
-		txtUsuario.setBounds(123, 82, 129, 20);
+		txtUsuario.setBounds(479, 134, 129, 20);
 		contentPanel.add(txtUsuario);
 		txtUsuario.setColumns(10);
 		
 		psfContraseña = new JPasswordField();
-		psfContraseña.setBounds(123, 158, 129, 20);
+		psfContraseña.setBounds(479, 210, 129, 20);
 		contentPanel.add(psfContraseña);
 		
 		btnIngresar = new JButton("Ingresar");
 		btnIngresar.addActionListener(this);
-		btnIngresar.setBounds(123, 228, 89, 23);
+		btnIngresar.setBounds(479, 280, 89, 23);
 		contentPanel.add(btnIngresar);
 		
 		lblError = new JLabel("Usuario o contrase\u00F1a incorrectos");
 		lblError.setForeground(Color.RED);
 		lblError.setVisible(false);
 		lblError.setFont(new Font("Verdana", Font.PLAIN, 11));
-		lblError.setBounds(67, 192, 200, 14);
+		lblError.setBounds(423, 244, 200, 14);
 		contentPanel.add(lblError);
+		
+		lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setBounds(10, 51, 332, 332);
+		contentPanel.add(lblNewLabel_2);
+		
+		lblNewLabel_3 = new JLabel("New label");
+		lblNewLabel_3.setBounds(409, 137, 46, 14);
+		contentPanel.add(lblNewLabel_3);
+		
+		lblNewLabel_4 = new JLabel("New label");
+		lblNewLabel_4.setBounds(409, 213, 46, 14);
+		contentPanel.add(lblNewLabel_4);
 	}
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnIngresar) {
@@ -110,7 +125,7 @@ public class FrmLogin extends JDialog implements ActionListener {
 			
 			if(usuarioValidar!= null) {
 				JOptionPane.showMessageDialog(this, "Bienvenido " + oUsuario.getUsuario());
-				frmPrincipal x = new frmPrincipal();
+				FrmPrincipal x = new FrmPrincipal();
 				x.setVisible(true);
 				this.dispose();
 			}
