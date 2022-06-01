@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
 
 import org.w3c.dom.Text;
 
-import componentes.JComboBoxBD;
+import componentes.JComboBoxBDGestores;
 import controladores.MySqlGestorDAO;
 import objetos.Gestor;
 import utils.libreria;
@@ -40,7 +40,7 @@ public class FrmDetalle_Documento extends JFrame implements ActionListener {
 	private JTextField txtTiempo;
 	private JTable table;
 	private JButton btnGuardar;
-	private JComboBoxBD cboGestor;
+	private JComboBoxBDGestores cboGestor;
 
 	/**
 	 * Launch the application.
@@ -101,7 +101,7 @@ public class FrmDetalle_Documento extends JFrame implements ActionListener {
 		contentPane.add(txtTiempo);
 		txtTiempo.setColumns(10);
 		
-		cboGestor = new JComboBoxBD("select * from gestores");
+		cboGestor = new JComboBoxBDGestores("select * from gestores");
 		cboGestor.setBounds(162, 161, 149, 22);
 		contentPane.add(cboGestor);
 		

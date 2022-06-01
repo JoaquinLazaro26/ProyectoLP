@@ -11,11 +11,11 @@ import utils.MySqlConexion;
 
 
 
-public class JComboBoxBD extends JComboBox{
+public class JComboBoxBDGestores extends JComboBox{
 	/*al llamar al constructor tu vas a enviar un parámetro tipo cadena*/ 
 	/*cualquier sentencia que tu escribas lo va a recibir el parámetro sql*/
 	
-	public JComboBoxBD(String sql) {
+	public JComboBoxBDGestores(String sql) {
 		/*de esta manera igual se agregan*/
 		Connection cn = null;
 		
