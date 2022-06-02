@@ -26,6 +26,10 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import java.awt.Color;
+import java.awt.Toolkit;
 
 public class FrmDetalle_Documento extends JFrame implements ActionListener {
 
@@ -62,28 +66,34 @@ public class FrmDetalle_Documento extends JFrame implements ActionListener {
 	 * Create the frame.
 	 */
 	public FrmDetalle_Documento() {
-		setTitle("DETALLE DOCUMENTOS");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(FrmDetalle_Documento.class.getResource("/iconos/im3.jpeg")));
+		setTitle("DETALLES DE DOCUMENTOS");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 584, 461);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(240, 248, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("C\u00D3DIGO DOCUMENTO");
-		lblNewLabel.setBounds(33, 31, 136, 20);
+		JLabel lblNewLabel = new JLabel("C\u00D3DIGO DOCUMENTO :");
+		lblNewLabel.setFont(new Font("Verdana", Font.PLAIN, 12));
+		lblNewLabel.setBounds(33, 31, 186, 20);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblDescripcinDocumento = new JLabel("DESCRIPCI\u00D3N DOCUMENTO");
-		lblDescripcinDocumento.setBounds(33, 73, 149, 20);
+		JLabel lblDescripcinDocumento = new JLabel("DESCRIPCI\u00D3N DOCUMENTO :");
+		lblDescripcinDocumento.setFont(new Font("Verdana", Font.PLAIN, 12));
+		lblDescripcinDocumento.setBounds(33, 73, 186, 20);
 		contentPane.add(lblDescripcinDocumento);
 		
-		JLabel lblTiempoEstimado = new JLabel("TIEMPO ESTIMADO");
-		lblTiempoEstimado.setBounds(33, 116, 136, 20);
+		JLabel lblTiempoEstimado = new JLabel("TIEMPO ESTIMADO :");
+		lblTiempoEstimado.setFont(new Font("Verdana", Font.PLAIN, 12));
+		lblTiempoEstimado.setBounds(33, 116, 186, 20);
 		contentPane.add(lblTiempoEstimado);
 		
-		JLabel lblGestor = new JLabel("GESTOR");
-		lblGestor.setBounds(33, 162, 92, 20);
+		JLabel lblGestor = new JLabel("GESTOR :");
+		lblGestor.setFont(new Font("Verdana", Font.PLAIN, 12));
+		lblGestor.setBounds(33, 162, 119, 20);
 		contentPane.add(lblGestor);
 		
 		txtCodDocumento = new JTextField();
@@ -121,8 +131,12 @@ public class FrmDetalle_Documento extends JFrame implements ActionListener {
 		scrollPane.setViewportView(table);
 		
 		btnGuardar = new JButton("GUARDAR");
+		btnGuardar.setFont(new Font("Verdana", Font.PLAIN, 11));
+		btnGuardar.setBackground(new Color(102, 204, 255));
+		btnGuardar.setForeground(Color.BLACK);
+		btnGuardar.setIcon(new ImageIcon(FrmDetalle_Documento.class.getResource("/iconos/search.jpeg")));
 		btnGuardar.addActionListener(this);
-		btnGuardar.setBounds(457, 30, 101, 23);
+		btnGuardar.setBounds(401, 11, 157, 51);
 		contentPane.add(btnGuardar);
 
 		listado();

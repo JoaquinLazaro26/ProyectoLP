@@ -54,9 +54,8 @@ add constraint FK_02 foreign key (cod_gestor) references gestores (cod_gestor);
 
 select * from detalle_gestor;
 
+
+
 select tipo_gestor, des_docu
 from detalle_documento d join gestores g
 on d.cod_gestor=g.cod_gestor;
-
-/* VICTORIA */
-

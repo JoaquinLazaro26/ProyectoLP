@@ -13,6 +13,8 @@ import javax.swing.table.DefaultTableModel;
 
 import controladores.MySqlGestorDAO;
 import objetos.Gestor;
+import java.awt.Toolkit;
+import java.awt.Color;
 
 public class FrmGestor extends JFrame {
 
@@ -41,16 +43,18 @@ public class FrmGestor extends JFrame {
 	 * Create the frame.
 	 */
 	public FrmGestor() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(FrmGestor.class.getResource("/iconos/im3.jpeg")));
 		setTitle("GESTORES");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 576, 381);
+		setBounds(100, 100, 616, 413);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(240, 248, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 11, 540, 320);
+		scrollPane.setBounds(10, 11, 580, 352);
 		contentPane.add(scrollPane);
 		
 		tableGestor = new JTable();

@@ -12,6 +12,13 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.UIManager;
+import javax.swing.ImageIcon;
+import java.awt.Toolkit;
 
 public class FrmPrincipal extends JFrame implements ActionListener {
 
@@ -20,10 +27,6 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 	private JMenu mnNewMenu;
 	private JMenuItem mntmNewMenuItem;
 	private JMenuItem mntmNewMenuItem_1;
-	private JMenu mnNewMenu_1;
-	private JMenu mnNewMenu_2;
-	private JMenu mnNewMenu_3;
-	private JMenu mnNewMenu_4;
 	private JMenu mnNewMenu_5;
 	private JMenuItem mntmNewMenuItem_2;
 	private JMenuItem mntmNewMenuItem_3;
@@ -49,14 +52,16 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 	 * Create the frame.
 	 */
 	public FrmPrincipal() {
-		setTitle("Actualizaci\u00F3n y aprobaci\u00F3n de plan de desarrollo concertado");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(FrmPrincipal.class.getResource("/iconos/im3.jpeg")));
+		setTitle("Actualizaci\u00F3n y Aprobaci\u00F3n de Plan de Desarrollo Concertado");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 793, 515);
+		setBounds(100, 100, 726, 399);
 		
 		menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
 		mnNewMenu = new JMenu("Archivo");
+		mnNewMenu.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/iconos/folder.jpeg")));
 		menuBar.add(mnNewMenu);
 		
 		mntmNewMenuItem_1 = new JMenuItem("Cambiar de usuario");
@@ -65,19 +70,8 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 		mntmNewMenuItem = new JMenuItem("Salir");
 		mnNewMenu.add(mntmNewMenuItem);
 		
-		mnNewMenu_1 = new JMenu("Rosita");
-		menuBar.add(mnNewMenu_1);
-		
-		mnNewMenu_2 = new JMenu("Jesus");
-		menuBar.add(mnNewMenu_2);
-		
-		mnNewMenu_3 = new JMenu("Rodrigo");
-		menuBar.add(mnNewMenu_3);
-		
-		mnNewMenu_4 = new JMenu("Victoria");
-		menuBar.add(mnNewMenu_4);
-		
 		mnNewMenu_5 = new JMenu("Matenimiento documentos");
+		mnNewMenu_5.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/iconos/applications.jpeg")));
 		menuBar.add(mnNewMenu_5);
 		
 		mntmNewMenuItem_2 = new JMenuItem("Listar gestores");
@@ -91,9 +85,18 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 		mntmNewMenuItem_4 = new JMenuItem("Buscar nombre");
 		mnNewMenu_5.add(mntmNewMenuItem_4);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(240, 248, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/iconos/im2.jpeg")));
+		lblNewLabel.setBackground(UIManager.getColor("Button.background"));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel.setBounds(10, 11, 688, 301);
+		contentPane.add(lblNewLabel);
 	}
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == mntmNewMenuItem_3) {
